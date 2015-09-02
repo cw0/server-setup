@@ -7,7 +7,7 @@
 
 #init variables
 INSTALL_LIST = "git tmux vim"
-NODE_VERSION = 0.10.32
+NODE_VERSION = "0.10.32"
 
 #begin setup
 echo "Everything broken again? Don't worry I got you."
@@ -26,21 +26,21 @@ echo "Done."
 
 #install basic dev tools
 echo "Installing basic development tools..."
-sudo apt-get install $INSTALL_LIST
+sudo apt-get install -y $INSTALL_LIST &&
 echo "Done."
 
 #install nvm
 echo "Installing NVM..."
 git clone https://github.com/creationix/nvm.git ~/.nvm &&
-echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
-echo "source ~/.nvm/nvm.sh" >> ~/.profile
-source ~/.nvm/nvm.sh
-nvm install $NODE_VERSION
-nvm alias default $NODE_VERSION
+echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
+echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
+source ~/.nvm/nvm.sh &&
+nvm install $NODE_VERSION &&
+nvm alias default $NODE_VERSION &&
 echo "Done."
 
 echo "Updating NPM..."
-npm update -g --verbose
+npm update -g --verbose &&
 echo "Done."
 
 #exit the script
