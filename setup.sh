@@ -34,13 +34,6 @@ echo "Installing NVM..."
 git clone https://github.com/creationix/nvm.git ~/.nvm &&
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
 echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
-source ~/.nvm/nvm.sh &&
-nvm install $NODE_VERSION &&
-nvm alias default $NODE_VERSION &&
-echo "Done."
-
-echo "Updating NPM..."
-npm update -g --verbose &&
 echo "Done."
 
 #exit the script
