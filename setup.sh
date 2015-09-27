@@ -29,14 +29,17 @@ echo "Installing basic development tools..."
 sudo apt-get install -y $INSTALL_LIST &&
 echo "Done."
 
+#backup bashrc & profile
+sudo cp ~/.bashrc ~/.bashrc.backup
+sudo cp ~/.profile ~/.profile.backup
+
 #install nvm
 echo "Installing NVM..."
 git clone https://github.com/creationix/nvm.git ~/.nvm &&
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
 echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
-. ~/.nvm/nvm.sh &&
-nvm install $NODE_VERSION &&
-nvm alias default $NODE_VERSION &&
+. ~/.nvm/nvm.sh install $NODE_VERSION &&
+. ~/.nvm/nvm.sh alias default $NODE_VERSION &&
 echo "Done." &&
 
 #update nvm
@@ -46,5 +49,5 @@ echo "Done."
 #exit the script
 echo "All Done Here. Press Any Key To Reboot..."
 read FINAL_INPUT
-sudo reboot
+#sudo reboot
 exit
