@@ -39,7 +39,7 @@ git clone https://github.com/creationix/nvm.git ~/.nvm &&
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
 echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
 cd ~/.nvm &&
-./nvm.sh &&
+source /nvm.sh &&
 nvm install $NODE_VERSION &&
 nvm alias default $NODE_VERSION &&
 echo "Done." &&
