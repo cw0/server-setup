@@ -38,18 +38,10 @@ echo "Installing NVM..."
 git clone https://github.com/creationix/nvm.git ~/.nvm &&
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
 echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
-cd ~/.nvm &&
-source nvm.sh &&
-nvm install $NODE_VERSION &&
-nvm alias default $NODE_VERSION &&
 echo "Done." &&
-
-#update nvm
-npm update -g --verbose &&
-echo "Done."
 
 #exit the script
 echo "All Done Here. Press Any Key To Reboot..."
 read FINAL_INPUT
-#sudo reboot
+sudo reboot
 exit
