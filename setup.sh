@@ -38,8 +38,10 @@ echo "Installing NVM..."
 git clone https://github.com/creationix/nvm.git ~/.nvm &&
 echo "source ~/.nvm/nvm.sh" >> ~/.bashrc &&
 echo "source ~/.nvm/nvm.sh" >> ~/.profile &&
-. ~/.nvm/nvm.sh install $NODE_VERSION &&
-. ~/.nvm/nvm.sh alias default $NODE_VERSION &&
+cd ~/.nvm &&
+./nvm.sh &&
+nvm install $NODE_VERSION &&
+nvm alias default $NODE_VERSION &&
 echo "Done." &&
 
 #update nvm
